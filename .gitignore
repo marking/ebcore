@@ -8,5 +8,6 @@ obj/
 bin/
 prod.zip
 package.zip
-.DS_Store/
+.DS_Store
+
 
