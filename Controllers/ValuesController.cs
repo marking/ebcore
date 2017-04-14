@@ -13,7 +13,7 @@ namespace core.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { $"{DateTime.UtcNow.ToString("o")}", $"{Environment.MachineName}" };
         }
 
         // GET api/values/5
