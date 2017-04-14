@@ -1,0 +1,5 @@
+aws elasticbeanstalk check-dns-availability --cname-prefix core-geom
+aws elasticbeanstalk describe-application-versions --application-name GeometryAndHoops #pick version from output
+aws elasticbeanstalk create-configuration-template --application-name GeometryAndHoops --template-name v1 --solution-stack-name "64bit Windows Server Core 2012 R2 v1.1.0 running IIS 8.5"
+#version label from describe-applicaiton-versions above gets passed to --version-label below
+aws elasticbeanstalk create-environment --cname-prefix core-geom --application-name GeometryAndHoops --template-name v1 --version-label app-ecf9-170414_045351 --environment-name develop --option-settings file://options.json
